@@ -80,7 +80,9 @@ namespace Practica02
 
         private void medicinasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormMedicina frmMdc = new FormMedicina(conn);
+            frmMdc.MdiParent = this;
+            frmMdc.Show();
         }
     }
 }

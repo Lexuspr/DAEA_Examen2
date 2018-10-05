@@ -118,51 +118,54 @@ namespace Practica02
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            String codigo = txtCodigo.Text;
-            String nombre = txtNombre.Text;
-            String ubicacion = txtUbicacion.Text;
-
-            if (codigo.Length > 0 && nombre.Length > 0 && ubicacion.Length > 0)
+            if (dgvListadoProv.SelectedRows.Count > 0)
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "paActualizarProveedor";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = conn;
+                String codigo = txtCodigo.Text;
+                String nombre = txtNombre.Text;
+                String ubicacion = txtUbicacion.Text;
 
-                SqlParameter paramCodigo = new SqlParameter();
-                paramCodigo.ParameterName = "@prv_codigo";
-                paramCodigo.SqlDbType = SqlDbType.NChar;
-                paramCodigo.Value = codigo;
-
-                SqlParameter paramNombre = new SqlParameter();
-                paramNombre.ParameterName = "@prv_nombre";
-                paramNombre.SqlDbType = SqlDbType.NVarChar;
-                paramNombre.Value = nombre;
-
-                SqlParameter paramUbicacion = new SqlParameter();
-                paramUbicacion.ParameterName = "@prv_ubicacion";
-                paramUbicacion.SqlDbType = SqlDbType.NVarChar;
-                paramUbicacion.Value = ubicacion;
-
-                cmd.Parameters.Add(paramCodigo);
-                cmd.Parameters.Add(paramNombre);
-                cmd.Parameters.Add(paramUbicacion);
-
-                int resultado = cmd.ExecuteNonQuery();
-
-                if (resultado > 0)
+                if (codigo.Length > 0 && nombre.Length > 0 && ubicacion.Length > 0)
                 {
-                    MessageBox.Show("Proveedor actualizado");
-                    listarProveedores(conn);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "paActualizarProveedor";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+
+                    SqlParameter paramCodigo = new SqlParameter();
+                    paramCodigo.ParameterName = "@prv_codigo";
+                    paramCodigo.SqlDbType = SqlDbType.NChar;
+                    paramCodigo.Value = codigo;
+
+                    SqlParameter paramNombre = new SqlParameter();
+                    paramNombre.ParameterName = "@prv_nombre";
+                    paramNombre.SqlDbType = SqlDbType.NVarChar;
+                    paramNombre.Value = nombre;
+
+                    SqlParameter paramUbicacion = new SqlParameter();
+                    paramUbicacion.ParameterName = "@prv_ubicacion";
+                    paramUbicacion.SqlDbType = SqlDbType.NVarChar;
+                    paramUbicacion.Value = ubicacion;
+
+                    cmd.Parameters.Add(paramCodigo);
+                    cmd.Parameters.Add(paramNombre);
+                    cmd.Parameters.Add(paramUbicacion);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Proveedor actualizado");
+                        listarProveedores(conn);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salio mal. Vuelve a intentar :/");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Algo salio mal. Vuelve a intentar :/");
+                    MessageBox.Show("No se permiten campos vacios!!!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("No se permiten campos vacios!!!");
             }
         }
 

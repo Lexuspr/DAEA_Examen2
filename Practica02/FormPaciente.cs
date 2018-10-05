@@ -186,85 +186,88 @@ namespace Practica02
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            String codigo = txtCodigo.Text;
-            String nombre = txtNombre.Text;
-            String DNI = txtDNI.Text;
-            String direccion = txtDireccion.Text;
-            //String especialidad = txtEspecialidad.Text;
-            String telefono = txtTelefono.Text;
-            String fec_nac = dtpFechaNac.Text;
-            //String fec_ini = dtpFechaInicio.Text;
-            String hospital = arrayHospitales[cbxHospital.SelectedIndex];
-
-            if (codigo.Length > 0 && nombre.Length > 0 && DNI.Length > 0 && direccion.Length > 0 && telefono.Length > 0 && fec_nac.Length > 0 && hospital.Length > 0)
+            if (dgvListadoP.SelectedRows.Count > 0)
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "paActualizarPaciente";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = conn;
+                String codigo = txtCodigo.Text;
+                String nombre = txtNombre.Text;
+                String DNI = txtDNI.Text;
+                String direccion = txtDireccion.Text;
+                //String especialidad = txtEspecialidad.Text;
+                String telefono = txtTelefono.Text;
+                String fec_nac = dtpFechaNac.Text;
+                //String fec_ini = dtpFechaInicio.Text;
+                String hospital = arrayHospitales[cbxHospital.SelectedIndex];
 
-                SqlParameter paramCodigo = new SqlParameter();
-                paramCodigo.ParameterName = "@pac_codigo";
-                paramCodigo.SqlDbType = SqlDbType.NChar;
-                paramCodigo.Value = codigo;
-
-                SqlParameter paramHospital = new SqlParameter();
-                paramHospital.ParameterName = "@pac_hospital";
-                paramHospital.SqlDbType = SqlDbType.NChar;
-                paramHospital.Value = hospital;
-
-                SqlParameter paramNombre = new SqlParameter();
-                paramNombre.ParameterName = "@pac_nomape";
-                paramNombre.SqlDbType = SqlDbType.NVarChar;
-                paramNombre.Value = nombre;
-
-                SqlParameter paramDNI = new SqlParameter();
-                paramDNI.ParameterName = "@pac_dni";
-                paramDNI.SqlDbType = SqlDbType.NVarChar;
-                paramDNI.Value = DNI;
-
-                SqlParameter paramDireccion = new SqlParameter();
-                paramDireccion.ParameterName = "@pac_direc";
-                paramDireccion.SqlDbType = SqlDbType.NVarChar;
-                paramDireccion.Value = direccion;
-
-                SqlParameter paramTelefono = new SqlParameter();
-                paramTelefono.ParameterName = "@pac_fono";
-                paramTelefono.SqlDbType = SqlDbType.NVarChar;
-                paramTelefono.Value = telefono;
-
-                SqlParameter paramFecNac = new SqlParameter();
-                paramFecNac.ParameterName = "@pac_fecnac";
-                paramFecNac.SqlDbType = SqlDbType.Date;
-                paramFecNac.Value = fec_nac;
-
-
-                cmd.Parameters.Add(paramCodigo);
-                cmd.Parameters.Add(paramNombre);
-                cmd.Parameters.Add(paramDNI);
-                cmd.Parameters.Add(paramDireccion);
-                //cmd.Parameters.Add(paramEspecialidad);
-                cmd.Parameters.Add(paramTelefono);
-                cmd.Parameters.Add(paramFecNac);
-                //cmd.Parameters.Add(paramFecIni);
-                cmd.Parameters.Add(paramHospital);
-
-                int resultado = cmd.ExecuteNonQuery();
-
-                if (resultado > 0)
+                if (codigo.Length > 0 && nombre.Length > 0 && DNI.Length > 0 && direccion.Length > 0 && telefono.Length > 0 && fec_nac.Length > 0 && hospital.Length > 0)
                 {
-                    MessageBox.Show("Paciente modificado");
-                    ListarPacientes(conn, hospital);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "paActualizarPaciente";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+
+                    SqlParameter paramCodigo = new SqlParameter();
+                    paramCodigo.ParameterName = "@pac_codigo";
+                    paramCodigo.SqlDbType = SqlDbType.NChar;
+                    paramCodigo.Value = codigo;
+
+                    SqlParameter paramHospital = new SqlParameter();
+                    paramHospital.ParameterName = "@pac_hospital";
+                    paramHospital.SqlDbType = SqlDbType.NChar;
+                    paramHospital.Value = hospital;
+
+                    SqlParameter paramNombre = new SqlParameter();
+                    paramNombre.ParameterName = "@pac_nomape";
+                    paramNombre.SqlDbType = SqlDbType.NVarChar;
+                    paramNombre.Value = nombre;
+
+                    SqlParameter paramDNI = new SqlParameter();
+                    paramDNI.ParameterName = "@pac_dni";
+                    paramDNI.SqlDbType = SqlDbType.NVarChar;
+                    paramDNI.Value = DNI;
+
+                    SqlParameter paramDireccion = new SqlParameter();
+                    paramDireccion.ParameterName = "@pac_direc";
+                    paramDireccion.SqlDbType = SqlDbType.NVarChar;
+                    paramDireccion.Value = direccion;
+
+                    SqlParameter paramTelefono = new SqlParameter();
+                    paramTelefono.ParameterName = "@pac_fono";
+                    paramTelefono.SqlDbType = SqlDbType.NVarChar;
+                    paramTelefono.Value = telefono;
+
+                    SqlParameter paramFecNac = new SqlParameter();
+                    paramFecNac.ParameterName = "@pac_fecnac";
+                    paramFecNac.SqlDbType = SqlDbType.Date;
+                    paramFecNac.Value = fec_nac;
+
+
+                    cmd.Parameters.Add(paramCodigo);
+                    cmd.Parameters.Add(paramNombre);
+                    cmd.Parameters.Add(paramDNI);
+                    cmd.Parameters.Add(paramDireccion);
+                    //cmd.Parameters.Add(paramEspecialidad);
+                    cmd.Parameters.Add(paramTelefono);
+                    cmd.Parameters.Add(paramFecNac);
+                    //cmd.Parameters.Add(paramFecIni);
+                    cmd.Parameters.Add(paramHospital);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Paciente modificado");
+                        ListarPacientes(conn, hospital);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salio mal. Vuelve a intentar :/");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Algo salio mal. Vuelve a intentar :/");
+                    MessageBox.Show("No se permiten campos vacios!!!");
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("No se permiten campos vacios!!!");
             }
         }
 
