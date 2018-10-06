@@ -25,21 +25,26 @@ namespace Practica02
             String str = "Server=localhost\\SQLSERVER2017;Database=sistema_9;Integrated Security=true";
             String nombre = txtUsuario.Text;
             String clave = txtClave.Text;
-            conn = new SqlConnection(str);
-            conn.Open();
-
-            if (validarDatos(nombre, clave, conn))
+            try
             {
-                MDIPrincipal principal = new MDIPrincipal(conn);
-                principal.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Credenciales invalidas");
-            }
+                conn = new SqlConnection(str);
+                conn.Open();
 
-            
+                if (validarDatos(nombre, clave, conn))
+                {
+                    MDIPrincipal principal = new MDIPrincipal(conn);
+                    principal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales invalidas");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema al conectar al servidor: " + ex);
+            }
         }
 
         private Boolean validarDatos(String nombre, String clave, SqlConnection conn)

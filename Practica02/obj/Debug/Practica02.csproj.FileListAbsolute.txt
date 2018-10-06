@@ -17,3 +17,6 @@ E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Pra
 E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormPaciente.resources
 E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormProveedor.resources
 E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormMedicina.resources
+E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormListado.resources
+E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormTriaje.resources
+E:\Microsoft Visual Studio\2017\source\repos\Practica02\Practica02\obj\Debug\Practica02.FormConsulta.resources

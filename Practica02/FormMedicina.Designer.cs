@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPresentacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoMd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(515, 291);
+            this.btnEliminar.Location = new System.Drawing.Point(515, 331);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(84, 34);
             this.btnEliminar.TabIndex = 128;
@@ -130,7 +131,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(515, 251);
+            this.btnEditar.Location = new System.Drawing.Point(515, 291);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(84, 34);
             this.btnEditar.TabIndex = 127;
@@ -225,11 +226,22 @@
             this.label7.TabIndex = 141;
             this.label7.Text = "Presentacion";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(514, 251);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 34);
+            this.btnCancelar.TabIndex = 143;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FormMedicina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 536);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtPresentacion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPrecio);
@@ -280,5 +292,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPresentacion;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

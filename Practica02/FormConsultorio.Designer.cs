@@ -42,6 +42,7 @@
             this.numPiso = new System.Windows.Forms.NumericUpDown();
             this.numNumero = new System.Windows.Forms.NumericUpDown();
             this.cbxHospital = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPiso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNumero)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(518, 201);
+            this.btnEliminar.Location = new System.Drawing.Point(519, 241);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(84, 34);
             this.btnEliminar.TabIndex = 42;
@@ -69,7 +70,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(518, 161);
+            this.btnEditar.Location = new System.Drawing.Point(519, 201);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(84, 34);
             this.btnEditar.TabIndex = 41;
@@ -173,11 +174,22 @@
             this.cbxHospital.TabIndex = 46;
             this.cbxHospital.SelectedIndexChanged += new System.EventHandler(this.cbxHospital_SelectedIndexChanged);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(519, 161);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 34);
+            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FormConsultorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cbxHospital);
             this.Controls.Add(this.numNumero);
             this.Controls.Add(this.numPiso);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.NumericUpDown numPiso;
         private System.Windows.Forms.NumericUpDown numNumero;
         private System.Windows.Forms.ComboBox cbxHospital;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

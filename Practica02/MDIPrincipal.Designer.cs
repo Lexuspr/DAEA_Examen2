@@ -44,6 +44,8 @@
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sisSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.procTriaje = new System.Windows.Forms.ToolStripMenuItem();
+            this.procConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +157,9 @@
             // 
             // procesosToolStripMenuItem
             // 
+            this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.procTriaje,
+            this.procConsulta});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.procesosToolStripMenuItem.Text = "Procesos";
@@ -173,6 +178,20 @@
             this.sisSalir.Size = new System.Drawing.Size(113, 26);
             this.sisSalir.Text = "Salir";
             this.sisSalir.Click += new System.EventHandler(this.sisSalir_Click);
+            // 
+            // procTriaje
+            // 
+            this.procTriaje.Name = "procTriaje";
+            this.procTriaje.Size = new System.Drawing.Size(216, 26);
+            this.procTriaje.Text = "Triaje";
+            this.procTriaje.Click += new System.EventHandler(this.procTriaje_Click);
+            // 
+            // procConsulta
+            // 
+            this.procConsulta.Name = "procConsulta";
+            this.procConsulta.Size = new System.Drawing.Size(216, 26);
+            this.procConsulta.Text = "Consulta";
+            this.procConsulta.Click += new System.EventHandler(this.procConsulta_Click);
             // 
             // MDIPrincipal
             // 
@@ -211,5 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem medicinasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manProveedores;
         private System.Windows.Forms.ToolStripMenuItem sisSalir;
+        private System.Windows.Forms.ToolStripMenuItem procTriaje;
+        private System.Windows.Forms.ToolStripMenuItem procConsulta;
     }
 }

@@ -84,5 +84,20 @@ namespace Practica02
             frmMdc.MdiParent = this;
             frmMdc.Show();
         }
+
+        private void procTriaje_Click(object sender, EventArgs e)
+        {
+            FormTriaje frmTrj = new FormTriaje(conn);
+            frmTrj.MdiParent = this;
+            frmTrj.Show();
+        }
+
+        private void procConsulta_Click(object sender, EventArgs e)
+        {
+            String tipo = "T";
+            FormListado frmList = new FormListado(conn, tipo);
+            frmList.MdiParent = this;
+            frmList.Show();
+        }
     }
 }

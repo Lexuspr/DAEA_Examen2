@@ -52,6 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(518, 338);
+            this.btnEliminar.Location = new System.Drawing.Point(519, 378);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(84, 34);
             this.btnEliminar.TabIndex = 56;
@@ -86,7 +87,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(518, 298);
+            this.btnEditar.Location = new System.Drawing.Point(519, 338);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(84, 34);
             this.btnEditar.TabIndex = 55;
@@ -263,11 +264,22 @@
             this.label9.TabIndex = 71;
             this.label9.Text = "Direccion";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(518, 298);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 34);
+            this.btnCancelar.TabIndex = 73;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FormMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 590);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpFechaInicio);
@@ -328,5 +340,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
